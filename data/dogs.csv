@@ -1,4 +1,4 @@
-name, age, breed
-fido, 4, husky
-barker, 7, corgi
-curly, 2, poodle
+name,age,breed,sex,color
+fido,4,husky,female,red
+barker,7,corgi,female,red
+curly,2,poodle,female,red
