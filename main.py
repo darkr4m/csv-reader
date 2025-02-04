@@ -30,7 +30,7 @@ animal_type = input("cats or dogs?\n")
 
 class Dog:
     def __init__(self, name, age, breed, sex, color):
-        self._name = name
+        self._name = name.title()
         self._age = age
         self._breed = breed
         self._sex = sex
@@ -42,7 +42,7 @@ class Dog:
     @name.setter
     def name(self, new_name):
         if isinstance(new_name, str):
-            self._name = new_name
+            self._name = new_name.title()
         else:
             print("Name must be a string.")
 
@@ -122,7 +122,7 @@ class Cat:
     @breed.setter
     def breed(self, new_breed):
         if isinstance(new_breed, str):
-            self._breed = new_breed
+            self._breed = new_breed.title()
         else:
             print("Breed must be a string.")
     
@@ -149,11 +149,6 @@ class Cat:
 
     def __str__(self):
         return f"{self.name} is a {self.age} year old {self.sex} {self.breed}. They are {self.color}."
-    
-
-dog = Dog('Foxtrot', 3, 'Belgian Malinois', 'female', 'mahogany with a black mask')
-cat = Cat('George', 8, 'Domestic Shorthair', 'male', 'white and orange')
-
 
 try:
     with open(f'./data/{animal_type}.csv', mode='r') as csv_file:
@@ -162,11 +157,12 @@ try:
         for row in csv_reader:
             if animal_type == 'dogs':
                 new_animal = Dog(row['name'],row['age'],row['breed'],row['sex'],row['color'])
-                print(new_animal)
             if animal_type == 'cats':
                 new_animal = Dog(row['name'],row['age'],row['breed'],row['sex'],row['color'])
-                print(new_animal)
 
             animals.append(new_animal)
+
+        for animal in animals:
+            print(animal)
 except:
     print(f"Sorry, we don't have any {animal_type} here.")
