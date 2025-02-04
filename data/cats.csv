@@ -1,4 +1,4 @@
-name, age, breed
-loki, 6, shorthair
-shadow, 3, siamese
-garfield, 2, ocelot
+name,age,breed,sex,color
+loki,6,shorthair,female,red
+shadow,3,siamese,female,red
+garfield,2,ocelot,female,red
